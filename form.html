@@ -1,0 +1,77 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home </title>
+</head>
+<body>
+    <H1>PERSONAL INFO FORM</H1>
+<form action="/submit - form" method ="POST">
+<!--text input for name-->
+<label for="name"> Name</label>
+<!--input type="text" id ="name" name ="name" required-->
+<input placeholder="enter your name" id="name" name="name">
+
+<br><br>
+<label for="contact"> contact</label>
+<input type="text" id ="Contact" contact ="contact" required>
+<br><br>
+<label for="email" > email </label>
+<input type="text" id ="email" email ="email " required>
+<br> <br>
+<!-- radio button for gender-->
+ <label>Gender</label>
+ <input type="radio" id ="male" name="gender" value="Male">
+ <label for ="male"> Male</label>
+  <input type="radio" id ="female" name="gender" value="Female">
+ <label for ="female"> Female</label>
+ <br><br>
+ <!--checkbox-->
+ <input type="checkbox" id ="subscribe" name="subscribe">
+ <label for="subscribe"> Subscribe to newsletter</label>
+ <br><br>
+ <!--message-->
+ <label for="message">Message:</label><br>
+ <textarea id="message" name="message"rows ="4" cols ="30"></textarea> 
+ <br><br>
+  <input type="file" name="document" multiple>
+ <br><br>
+ <label for="passowrd"> password</label>
+ <input type ="password" name="pass" >
+ <br><br>
+ <label for="color"> color </label>
+ <input type ="color" name="favColor">
+ <br><br>
+ <label for= "date of birth" >date of birth</label>
+ <input type="date" id="date of birth" name="date of birth">
+ <br><br>
+ <label course="select course"> select course</label>
+ <select id="course" name="course" required>
+    <option value="">----choose----</option>
+    <option value="btech">btech</option>
+    <option value="bsc">bsc</option>
+    <option value="ba">ba</option>
+ </select>
+ <br><br>
+ <style>
+    body {
+     background-color: cornflowerblue;
+       }
+  </style>
+  <br><br>
+  
+
+ <input type ="submit" id="submit" name="submit">
+ <label for ="submit"></label>
+ <br> <br>
+<input type ="reset" id="reset" name="reset">
+ <label for ="reser"></label>
+ <br><br>
+ 
+
+
+</form>
+</body>
+
+
