@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Selector Examples</title>
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    p {
+      color: blue;
+    }
+    .intro {
+      font-size: 18px;
+      color: green;
+    }
+    #header {
+      background: lightgray;
+      padding: 10px;
+      text-align: center;
+    }
+
+    /* e) Attribute Selector */
+    input[type="text"] {
+      border: 8px solid purple;
+      padding: 5px;
+    }
+
+    /* f) Pseudo-class */
+    a:hover {
+      color: red;
+    }
+
+    /* g) Pseudo-element */
+    p::first-line {
+      font-weight: bold;
+    }
+    
+    h1, h2, p {
+      color: blue;
+      font-family: Arial, sans-serif;
+    }
+        p em {
+      color: red;
+      font-weight: bold;
+    }
+    div span {
+      background: yellow;
+      padding: 2px;
+    }
+    ul li a {
+      color: green;
+      text-decoration: none;
+    }
+
+    ul li a:hover {
+      text-decoration: underline;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div id="header">
+    <h1>Welcome to CSS Selector Demo</h1>
+  </div>
+
+  <p>This is a normal paragraph. Notice that it appears in <b>blue</b>.</p>
+
+  <p class="intro">This is an intro paragraph styled with a <b>class selector</b>. The first line is bold.</p>
+
+
+  <h3>Login Form:</h3>
+  <form>
+    <label>Username:</label>
+    <input type="text" placeholder="Enter username"><br><br>
+
+    <label>Password:</label>
+    <input type="password" placeholder="Enter password"><br><br>
+
+    <input type="submit" value="Login">
+  </form>
+
+  <!-- Pseudo-class -->
+  <p>Here is a <a href="#">hoverable link</a>. Try hovering!</p>
+    <h1>This is heading 1</h1>
+  <h2>This is heading 2</h2>
+  <p>This is a paragraph.</p>
+    <p>This is a <em>nested</em> style example.</p>
+
+  <div>
+    <p>This <span>highlighted text</span> is inside a div.</p>
+  </div>
+
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+
+    <!--CSS UNIT-->
+  	div {
+  width: 50%; /* half the width of its parent */
+}
+	body { font-size: 16px; }
+	p { font-size: 2em; } /* 32px (2 × 16px) */
+
+
+  
+
+</body>
+</html>
+
+

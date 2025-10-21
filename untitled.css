@@ -1,0 +1,17 @@
+* {
+  margin: 20;
+  padding: 40;
+  box-sizing: border-box;
+}
+#header {
+  background: lightgray;
+}
+input[type="text"] {
+  border: 1px solid #000;
+}
+a:hover {
+  color: red;
+}
+p::first-line {
+  font-weight: bold;
+}

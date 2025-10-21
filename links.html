@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Images & Links Example</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; line-height:1.6; padding:20px; }
+    nav a { margin-right: 12px; }
+    img.responsive { max-width: 100%; height: auto; border-radius: 8px; }
+    .card { max-width:600px; margin-top:16px; padding:12px; border:1px solid #ddd; border-radius:8px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Images & Links Demo</h1>
+    <!-- Internal link to an anchor on the same page -->
+    <nav>
+      <a href="#top">Top</a>
+      <a href="#gallery">Gallery (internal anchor)</a>
+      <!-- Internal link to another page on the same website -->
+      <a href="/about.html">About (internal page)</a>
+      <!-- External link to another website, opens in new tab -->
+      <a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN (external)</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="gallery" class="card">
+      <h2>Image inserted with &lt;img&gt;</h2>
+
+      <!-- Local/relative image (internal image file within your website) -->
+      <!-- Make sure "images/photo.jpg" exists in your project -->
+      <figure>
+        <img src="images/photo.jpg"
+             alt="A descriptive text for screen readers"
+             class="responsive"
+             width="800" height="450">
+        <figcaption>Figure: Example photo stored at <code>images/photo.jpg</code> (relative/internal).</figcaption>
+      </figure>
+
+      <p>
+        You can also make an image act as a link. Below it links to an external website:
+      </p>
+
+      <!-- Image used as a hyperlink to an external site -->
+      <a href="https://www.example.com" target="_blank" rel="noopener noreferrer">
+        <img src="https://via.placeholder.com/300x150.png?text=External+Image" alt="Placeholder external" style="display:block; max-width:300px;">
+      </a>
+
+      <hr>
+
+      <h3>Other useful link types</h3>
+      <ul>
+        <li><a href="/files/resume.pdf" download>Download a file (internal file)</a></li>
+        <li><a href="mailto:hello@example.com">Send an email (mailto)</a></li>
+        <li><a href="tel:+1234567890">Call a phone number (tel)</a></li>
+        <!-- Internal anchor to the top of this page -->
+        <li><a href="#top">Back to top (internal anchor)</a></li>
+      </ul>
+    </section>
+
+    <!-- Simulate another section / internal page anchor -->
+    <section id="top" class="card">
+      <h2 id="top-heading">Top of Page</h2>
+      <p>This is the top. Use the nav links to jump around or to follow external/internal links.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Quick notes: use descriptive <code>alt</code> text for accessibility; use <code>rel="noopener noreferrer"</code> on links that open in new tabs for security.</p>
+  </footer>
+
+</body>
+</html>
