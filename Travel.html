@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelSphere - Explore The World</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            overflow-x: hidden;
+            background: #f4f0fa;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            padding: 18px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+
+        nav h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #7757d6;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #444;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        nav ul li a:hover {
+            color: #7757d6;
+        }
+
+        /* HERO SECTION WITHOUT VIDEO */
+        .hero {
+            height: 100vh;
+            padding-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+
+            /* Pastel gradient background */
+            background: linear-gradient(135deg, #e8dbff, #f6eafc, #dcd5ff);
+            color: #333;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            font-weight: 700;
+            color: #4b3fa3; 
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+        .hero p {
+            margin-top: 15px;
+            font-size: 22px;
+            color: #555;
+            animation: fadeIn 3s ease-in-out forwards;
+        }
+        .hero button {
+            margin-top: 30px;
+            padding: 14px 32px;
+            background: #8f80e8;
+            border: none;
+            color: white;
+            font-size: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: 0.3s;
+        }
+        .hero button:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            0% {opacity: 0; transform: translateY(20px);}
+            100% {opacity: 1; transform: translateY(0);}
+        }
+
+        /* SECTION HEADINGS */
+        .section {
+            padding: 80px 50px;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 42px;
+            color: #7757d6;
+            margin-bottom: 40px;
+        }
+
+        /* DESTINATION CARDS */
+        .destinations {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 35px;
+        }
+
+        .card {
+            width: 300px;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 185px;
+            object-fit: cover;
+        }
+        .card h3 {
+            padding: 15px;
+            color: #7757d6;
+            font-size: 22px;
+        }
+
+        /* TESTIMONIAL CARDS */
+        .testimonials {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            flex-wrap: wrap;
+        }
+        .review {
+            width: 300px;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+            font-size: 17px;
+            line-height: 1.5;
+        }
+
+        .review span {
+            color: #7757d6;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #dcd4ff;
+            padding: 50px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        footer p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <h2>TravelSphere</h2>
+    <ul>
+        <li><a href="Travel.html">Home</a></li>
+        <li><a href="nationalpage.html">National Trips</a></li>
+        <li><a href="#">International Trips</a></li>
+        <li><a href="blogpageweb.html">Blog Page</a></li>
+        <li><a href="#">Travel Tips</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HERO SECTION WITHOUT VIDEO -->
+<div class="hero">
+    <h1>Discover the World on a Budget</h1>
+    <p>Premium experiences at pocket-friendly prices.</p>
+    <button>Plan Your Trip</button>
+</div>
+
+<!-- POPULAR DESTINATIONS -->
+<div class="section">
+    <h2>Popular Destinations</h2>
+
+    <div class="destinations">
+        <div class="card">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.Di4NwxF9GweS5hwHE5ftjAHaFj?pid=Api&P=0&h=180">
+            <h3>Shimla</h3>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=60">
+            <h3>Paris</h3>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=60">
+            <h3>Goa</h3>
+        </div>
+    </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="section">
+    <h2>What Travelers Say</h2>
+
+    <div class="testimonials">
+        <div class="review">
+            “Best travel service ever! Loved the packages, so affordable.”  
+            <br><br><span>- Tanvi</span>
+        </div>
+        <div class="review">
+            “Beautiful arrangements and great discounts. Loved it!”  
+            <br><br><span>- Divyansh</span>
+        </div>
+        <div class="review">
+            “Perfect for students traveling on a budget. Amazing!”  
+            <br><br><span>- Anupma</span>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2025 TravelSphere | Travel Smart. Travel Affordable.</p>
+</footer>
+
+</body>
+</html>
