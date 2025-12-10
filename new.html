@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Layout Example - Updated</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #eef2ff;
+      color: #222;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #6a5acd;
+      padding: 15px 20px;
+      color: white;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    }
+
+    .navbar .logo {
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    .navbar .nav-links {
+      display: flex;
+      gap: 18px;
+    }
+
+    .navbar .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .navbar .nav-links a:hover {
+      background-color: #5848c2;
+    }
+
+    /* Main content */
+    .container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 25px;
+      gap: 22px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      width: 30%;
+      padding: 18px;
+      box-sizing: border-box;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      max-width: 100%;
+      border-radius: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 18px;
+      background-color: #dcd9ff;
+      margin-top: 25px;
+      border-top: 2px solid #b8b3ff;
+      font-weight: bold;
+    }
+
+    /* Media Queries */
+
+    /* Tablets (width <= 992px) */
+    @media (max-width: 992px) {
+      .card {
+        width: 45%;
+      }
+    }
+
+    /* Mobile (width <= 600px) */
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar .nav-links {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .navbar .nav-links a {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+      }
+
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">MyWebsite</div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Blog</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <section class="container">
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Sunrise_over_mountains.jpg" alt="Card 1">
+      <h3>Card 1</h3>
+      <p>This card will resize depending on the screen size.</p>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Smartwatch_icon.svg" alt="Card 2">
+      <h3>Card 2</h3>
+      <p>Flexbox and media queries make the layout responsive.</p>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Headphones_icon.svg" alt="Card 3">
+      <h3>Card 3</h3>
+      <p>Cards adjust width and stack vertically on mobile screens.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Tanvi  | Responsive Layout Example</p>
+  </footer>
+
+</body>
+</html>

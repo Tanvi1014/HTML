@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Units Demo – Updated</title>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 20px;
+      background: linear-gradient(135deg, #fdfbfb, #ebedee);
+      color: #2c2c2c;
+      font-size: 16px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #6a5acd;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+
+    .unit-box {
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 22px;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* px unit */
+    .box-px {
+      width: 200px;
+      height: 100px;
+      background-color: #ffd6e7;
+      border: 2px solid #d81b60;
+    }
+
+    /* % unit */
+    .box-percent {
+      width: 50%;
+      height: 100px;
+      background-color: #d1f2ff;
+      border: 2px solid #0288d1;
+    }
+
+    /* em unit */
+    .box-em {
+      width: 20em;
+      height: 5em;
+      background-color: #e8f5e9;
+      border: 2px solid #43a047;
+    }
+
+    /* rem unit */
+    .box-rem {
+      width: 20rem;
+      height: 5rem;
+      background-color: #fff4c2;
+      border: 2px solid #f9a825;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-top: 40px;
+      text-align: center;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Units Demo: px, %, em, rem</h1>
+
+  <div class="unit-box box-px">Width: 200px</div>
+  <div class="unit-box box-percent">Width: 50%</div>
+  <div class="unit-box box-em">Width: 20em</div>
+  <div class="unit-box box-rem">Width: 20rem</div>
+
+  <p>
+    Observe how each unit behaves differently: <br>
+    <strong>px</strong> = fixed pixels, <strong>%</strong> = relative to parent, <strong>em</strong> = relative to parent font-size, <strong>rem</strong> = relative to root font-size.
+  </p>
+
+</body>
+</html>

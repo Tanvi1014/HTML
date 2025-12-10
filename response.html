@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Design Example</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2efff;
+      color: #2e2e3a;
+    }
+
+    header {
+      background: linear-gradient(135deg, #6a5acd, #836fff);
+      color: white;
+      text-align: center;
+      padding: 35px 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #5a4fcf;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 22px;
+      display: block;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      background-color: #4a3ec0;
+      transform: scale(1.05);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 25px auto;
+      padding: 15px;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      padding: 20px;
+      width: 30%;
+      min-width: 260px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: transform 0.3s;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    .card h2 {
+      color: #5a4fcf;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #dcd7ff;
+      border-top: 2px solid #b8b2f0;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+      }
+
+      nav a {
+        text-align: center;
+        padding: 12px 0;
+      }
+
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Responsive Design Demo</h1>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <div class="container">
+    <section class="cards">
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Sunrise_over_mountains.jpg" alt="Sunrise">
+        <h2>Card 1</h2>
+        <p>This card adjusts beautifully with the new color scheme.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Smartwatch_icon.svg" alt="Smartwatch">
+        <h2>Card 2</h2>
+        <p>Updated modern UI and smoother shadows make it visually clean.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Headphones_icon.svg" alt="Headphones">
+        <h2>Card 3</h2>
+        <p>Fully responsive cards with elegant hover animation.</p>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2025 Tanvi | Responsive Design Example</p>
+  </footer>
+
+</body>
+</html>

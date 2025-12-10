@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image and Hyperlinks Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 20px;
+      color: #333;
+    }
+
+    h2 {
+      color: #333;
+      margin-top: 30px;
+    }        
+    a {
+      text-decoration: none;
+      color: blue;
+    }
+
+    a:hover {
+      color: red;
+    }
+    img {
+      width: 150px;
+      height: auto;
+      border: 1px solid #ccc;
+      margin-top: 10px;
+    }
+    p {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>1. External Link</h2>
+  <a href="https://www.google.com" target="_blank">Go to Google</a>
+
+  <h2>2. Internal Link</h2>
+  <a href="about.html">Go to About Page</a>
+
+  <h2>3. Clickable Image as External Link</h2>
+  <a href="https://www.youtube.com" target="_blank">
+    <img src="youtube-logo.png" alt="YouTube Logo">
+  </a>
+
+  <h2>4. Clickable Image as Internal Link</h2>
+  <a href="gallery.html">
+    <img src="photo.jpg" alt="Photo Gallery">
+  </a>
+
+  <h2>5. Internal Section Link</h2>
+  <a href="#contact">Go to Contact Section</a>
+
+  <h2 id="contact">Contact Section</h2>
+  <p>Email: Tanvi@example.com</p>
+
+</body>
+</html>
+
+

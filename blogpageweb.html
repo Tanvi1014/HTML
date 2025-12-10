@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TravelSphere Blog - Multi-Destination</title>
+<style>
+/* Basic Reset */
+* {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif;}
+body {background:#f4f0fa; color:#333; line-height:1.5;}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  width:100%;
+  top:0;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(8px);
+  padding: 15px 30px;
+  display:flex; justify-content:space-between; align-items:center;
+  box-shadow:0 2px 6px rgba(0,0,0,0.08); z-index:1000;
+}
+nav h2 {color:#7757d6; font-size:24px; font-weight:700;}
+nav ul {display:flex; list-style:none; gap:20px;}
+nav ul li a {text-decoration:none; color:#444; font-size:15px; transition:0.3s;}
+nav ul li a:hover {color:#7757d6;}
+
+/* HERO SECTION */
+.hero {
+  margin-top:70px;
+  padding:80px 20px 30px 20px;
+  text-align:center;
+  background: linear-gradient(135deg, #e8dbff, #f6eafc, #dcd5ff);
+  border-radius:15px;
+}
+.hero h1 {font-size:36px; color:#4b3fa3; margin-bottom:10px;}
+.hero p {font-size:18px; color:#555; margin-bottom:15px;}
+.hero button {
+  padding:10px 25px;
+  background: #8f80e8; color:white;
+  border:none; border-radius:8px; cursor:pointer;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+.hero button:hover {transform:scale(1.03);}
+
+/* FEATURED BLOG SLIDER */
+.slider {margin:40px auto; width:90%; overflow:hidden; border-radius:12px;}
+.slides {display:flex; width:500%; animation: slide 20s infinite;}
+.slides img {width:20%; object-fit:cover; border-radius:12px; height:150px;}
+@keyframes slide {
+  0%{transform:translateX(0%);}20%{transform:translateX(0%);}
+  25%{transform:translateX(-20%);}45%{transform:translateX(-20%);}
+  50%{transform:translateX(-40%);}70%{transform:translateX(-40%);}
+  75%{transform:translateX(-60%);}95%{transform:translateX(-60%);}
+  100%{transform:translateX(0);}
+}
+
+/* SEARCH BAR */
+.search-bar {margin:30px auto; text-align:center;}
+.search-bar input[type="text"] {
+  padding:8px 12px; width:60%; border-radius:8px 0 0 8px; border:1px solid #ccc;
+}
+.search-bar button {
+  padding:8px 15px; border:none; background:#7757d6; color:white; border-radius:0 8px 8px 0; cursor:pointer;
+  transition:0.3s;
+}
+.search-bar button:hover {background:#5e42b5;}
+
+/* CATEGORIES / FILTERS */
+.categories {
+  display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin:20px 0;
+}
+.categories button {
+  padding:6px 15px; border:none; background:#b9aaff; color:#4b3fa3;
+  border-radius:15px; cursor:pointer; transition:0.3s;
+}
+.categories button:hover {background:#8f80e8; color:white;}
+
+/* MAP SECTION */
+.map-section {width:90%; margin:30px auto; padding:20px; background:#e8dbff; border-radius:12px; text-align:center;}
+.map-section img {width:100%; max-width:500px; border-radius:12px;}
+
+/* BLOG SECTIONS */
+.blog {width:90%; margin:30px auto; background:white; border-radius:12px; padding:20px; box-shadow:0 3px 10px rgba(0,0,0,0.08);}
+.blog h2 {color:#7757d6; margin-bottom:10px; font-size:22px;}
+.blog img {width:100%; border-radius:10px; margin:10px 0; height:180px; object-fit:cover;}
+.blog .reading-time {color:#555; font-size:13px; margin-bottom:8px;}
+.blog ul {margin:8px 0;}
+.blog ul li {margin:3px 0; font-size:14px;}
+
+/* AUTHOR CARD */
+.author-card {
+  width:90%; max-width:500px; margin:30px auto;
+  display:flex; align-items:center; gap:15px;
+  padding:15px; border-radius:12px; background:white; box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+.author-card img {width:70px; height:70px; border-radius:50%; object-fit:cover;}
+.author-card div h3 {color:#7757d6; margin-bottom:5px; font-size:16px;}
+.author-card div p {font-size:14px; color:#555;}
+.social-icons a {margin-right:8px; font-size:14px; color:#7757d6; text-decoration:none;}
+
+/* RELATED POSTS */
+.related {width:90%; margin:30px auto;}
+.related h3 {color:#7757d6; margin-bottom:15px;}
+.related-cards {display:flex; flex-wrap:wrap; gap:10px;}
+.related-card {flex:1; min-width:180px; background:white; border-radius:10px; box-shadow:0 3px 8px rgba(0,0,0,0.08); padding:10px;}
+.related-card img {width:100%; border-radius:8px; height:120px; object-fit:cover;}
+.related-card h4 {font-size:14px; margin-top:5px;}
+
+/* COMMENTS SECTION */
+.comments {width:90%; margin:30px auto; background:#f1eaff; padding:20px; border-radius:12px;}
+.comments h3 {color:#7757d6; margin-bottom:10px; font-size:18px;}
+.comments input, .comments textarea {width:100%; padding:8px; margin:5px 0; border-radius:6px; border:1px solid #ccc; font-size:14px;}
+.comments button {padding:8px 15px; border:none; background:#7757d6; color:white; border-radius:6px; cursor:pointer;}
+
+/* SHARE BUTTONS */
+.share-buttons {margin:15px auto; width:90%;}
+.share-buttons a {text-decoration:none; margin-right:10px; color:white; padding:6px 12px; border-radius:6px; background:#8f80e8; font-size:13px; transition:0.3s;}
+.share-buttons a:hover {background:#5e42b5;}
+
+/* NEWSLETTER */
+.newsletter {width:90%; margin:30px auto; padding:20px; background:#e8dbff; border-radius:12px; text-align:center;}
+.newsletter input[type="email"] {padding:10px; width:50%; border-radius:8px 0 0 8px; border:1px solid #ccc;}
+.newsletter button {padding:10px 15px; border:none; background:#7757d6; color:white; border-radius:0 8px 8px 0; cursor:pointer;}
+.newsletter button:hover {background:#5e42b5;}
+
+/* FOOTER */
+footer {background:#dcd4ff; padding:30px; text-align:center; margin-top:30px; font-size:14px; color:#4b3fa3; border-radius:12px;}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+<h2>TravelSphere</h2>
+<ul>
+<li><a href="Travel.html">Home</a></li>
+<li><a href="nationalpage.html">National Trips</a></li>
+<li><a href="international.html">International Trips</a></li>
+<li><a href="blogpageweb.html">Blog Page</a></li>
+<li><a href="tips.html">Travel Tips</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+<h1>Explore Amazing Destinations</h1>
+<p>Read our curated travel blogs for tips, guides, and inspiration.</p>
+<button>Start Reading</button>
+</div>
+
+<!-- FEATURED BLOG SLIDER -->
+<div class="slider">
+  <div class="slides">
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=60" alt="Goa">
+    <img src="https://images.unsplash.com/photo-1504609813444-1b98de5fd79d?auto=format&fit=crop&w=600&q=60" alt="Kashmir">
+    <img src="https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=600&q=60" alt="Dubai">
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=60" alt="Maldives">
+    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=60" alt="Paris">
+  </div>
+</div>
+
+<!-- SEARCH BAR -->
+<div class="search-bar">
+<input type="text" placeholder="Search blogs by destination, keyword, or category...">
+<button>Search</button>
+</div>
+
+<!-- CATEGORIES -->
+<div class="categories">
+<button>Beaches</button>
+<button>Mountains</button>
+<button>Road Trips</button>
+<button>Solo Travel</button>
+<button>Budget Travel</button>
+<button>Food & Culture</button>
+</div>
+
+<!-- MAP SECTION -->
+<div class="map-section">
+<h2>Click on a Destination Pin</h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg" alt="Map">
+<p>Hover or click a pin to explore related blog.</p>
+</div>
+
+<!-- BLOG SECTIONS -->
+<!-- Goa -->
+<div class="blog">
+<h2>Goa - Beaches & Nightlife</h2>
+<p class="reading-time">⏱️ 4 min read</p>
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=60" alt="Goa Beach">
+<p>Goa is India’s ultimate beach destination. Sun, sand, and nightlife make it a paradise for travelers. Perfect for solo travelers and couples alike.</p>
+<ul class="tips">
+<li>Best time: Nov to Feb</li>
+<li>Budget: ₹5,000 - ₹12,000</li>
+<li>Don’t miss: Baga beach and flea markets</li>
+</ul>
+<ul class="checklist">
+<li>Sunscreen</li>
+<li>Swimwear</li>
+<li>Hat & Sunglasses</li>
+</ul>
+</div>
+
+<!-- Kashmir -->
+<div class="blog">
+<h2>Kashmir - Heaven on Earth</h2>
+<p class="reading-time">⏱️ 5 min read</p>
+<img src="https://tse4.mm.bing.net/th/id/OIP.jTuODpGPaevFrJ5DHMiunAHaE7?pid=Api&P=0&h=180 "alt="Kashmir">
+<p>Kashmir offers stunning landscapes, snow-capped mountains, and serene lakes. Ideal for nature lovers and honeymooners.</p>
+<ul class="tips">
+<li>Best time: Mar to Oct</li>
+<li>Budget: ₹10,000 - ₹20,000</li>
+<li>Don’t miss: Dal Lake & Gulmarg</li>
+</ul>
+<ul class="checklist">
+<li>Warm clothes</li>
+<li>Camera</li>
+<li>Travel insurance</li>
+</ul>
+</div>
+
+<!-- Dubai -->
+<div class="blog">
+<h2>Dubai - Luxury on a Budget</h2>
+<p class="reading-time">⏱️ 4 min read</p>
+<img src="https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=800&q=60" alt="Dubai">
+<p>Dubai offers modern architecture, luxury shopping, and desert adventures. It’s a city of dreams for urban explorers.</p>
+<ul class="tips">
+<li>Best time: Nov to Mar</li>
+<li>Budget: ₹25,000 - ₹50,000</li>
+<li>Don’t miss: Burj Khalifa & Desert Safari</li>
+</ul>
+<ul class="checklist">
+<li>Comfortable shoes</li>
+<li>Sun protection</li>
+<li>Valid passport & visa</li>
+</ul>
+</div>
+
+<!-- Maldives -->
+<div class="blog">
+<h2>Maldives - Tropical Paradise</h2>
+<p class="reading-time">⏱️ 5 min read</p>
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=60" alt="Maldives">
+<p>Maldives is famous for crystal clear waters and overwater bungalows. Ideal for honeymooners and luxury travelers.</p>
+<ul class="tips">
+<li>Best time: Nov to Apr</li>
+<li>Budget: ₹40,000 - ₹80,000</li>
+<li>Don’t miss: Snorkeling & Island Hopping</li>
+</ul>
+<ul class="checklist">
+<li>Swimwear</li>
+<li>Snorkeling gear</li>
+<li>Sunscreen</li>
+</ul>
+</div>
+
+<!-- Paris -->
+<div class="blog">
+<h2>Paris - Romantic Getaway</h2>
+<p class="reading-time">⏱️ 4 min read</p>
+<img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=60" alt="Paris">
+<p>Paris is the city of love. With historic architecture, cafes, and art, it’s a perfect destination for couples and culture lovers.</p>
+<ul class="tips">
+<li>Best time: Apr to Jun</li>
+<li>Budget: ₹30,000 - ₹60,000</li>
+<li>Don’t miss: Eiffel Tower & Louvre Museum</li>
+</ul>
+<ul class="checklist">
+<li>Comfortable walking shoes</li>
+<li>Camera</li>
+<li>French phrasebook or app</li>
+</ul>
+</div>
+
+<!-- AUTHOR CARD -->
+<div class="author-card">
+<img src="C:\Users\Tanvi\OneDrive\Desktop\pic.jpg" alt="Author">
+<div>
+<h3>Tanvi</h3>
+<p>Travel Blogger & Adventurer. Sharing tips and stories from around the world.</p>
+<div class="social-icons">
+<a href="#">IG</a>
+<a href="#">Twitter</a>
+<a href="#">FB</a>
+</div>
+</div>
+</div>
+
+<!-- RELATED POSTS -->
+<div class="related">
+<h3>You May Also Like</h3>
+<div class="related-cards">
+<div class="related-card">
+<img src="https://tse1.mm.bing.net/th/id/OIP.OxZjm5-znolfRoqoGKj_8QHaE8?pid=Api&P=0&h=180">
+<h4>Top 5 Beaches in India</h4>
+</div>
+<div class="related-card">
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=60">
+<h4>Mountain Escapes</h4>
+</div>
+<div class="related-card">
+<img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=400&q=60">
+<h4>Romantic Getaways in Europe</h4>
+</div>
+</div>
+</div>
+
+<!-- COMMENTS SECTION -->
+<div class="comments">
+<h3>Leave a Comment</h3>
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea placeholder="Your Comment"></textarea>
+<button>Submit Comment</button>
+</div>
+
+<!-- SHARE BUTTONS -->
+<div class="share-buttons" style="width:90%; margin:20px auto;">
+<a href="#">Instagram</a>
+<a href="#">WhatsApp</a>
+<a href="#">Twitter</a>
+<a href="#">Facebook</a>
+</div>
+
+<!-- NEWSLETTER -->
+<div class="newsletter">
+<h3>Get New Travel Blogs Weekly!</h3>
+<input type="email" placeholder="Enter your email">
+<button>Subscribe</button>
+</div>
+
+<!-- FOOTER -->
+<footer>
+<p>© 2025 TravelSphere | Travel Smart. Travel Affordable.</p>
+</footer>
+
+</body>
+</html>

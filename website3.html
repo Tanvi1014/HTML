@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TravelSphere - Best Tour Planner</title>
+
+<style>
+/* ---------------- GLOBAL ---------------- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* ---------------- 3D FLOATING BACKGROUND ---------------- */
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #ffe6e6, #e6f7ff, #fff0e6);
+    background-size: 300% 300%;
+    animation: gradientMove 12s infinite alternate ease-in-out;
+    z-index: -2;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Soft glowing particles */
+.particle {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 50%;
+    filter: blur(20px);
+    animation: float 10s infinite ease-in-out alternate;
+}
+
+.p1 { top: 20%; left: 10%; animation-duration: 12s; }
+.p2 { top: 60%; left: 70%; animation-duration: 10s; }
+.p3 { top: 80%; left: 30%; animation-duration: 14s; }
+.p4 { top: 40%; left: 80%; animation-duration: 11s; }
+
+@keyframes float {
+    0% { transform: translateY(0px) translateX(0px); }
+    100% { transform: translateY(-50px) translateX(30px); }
+}
+
+/* ---------------- NAVIGATION ---------------- */
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+nav .logo {
+    font-size: 32px;
+    font-weight: 700;
+    color: #4f7cac;
+}
+
+nav ul {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
+
+nav ul li a {
+    color: #444;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #4f7cac;
+}
+
+/* ---------------- HERO SECTION ---------------- */
+.hero {
+    padding-top: 150px;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0px); }
+}
+
+.hero h1 {
+    font-size: 60px;
+    font-weight: bold;
+    color: #4f7cac;
+}
+
+.hero p {
+    font-size: 22px;
+    width: 60%;
+    margin: auto;
+    color: #555;
+}
+
+.hero-img {
+    margin-top: 40px;
+    width: 70%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 35px;
+    background-color: #a9d6e5;
+    text-decoration: none;
+    color: #333;
+    border-radius: 35px;
+    font-size: 18px;
+    transition: 0.3s;
+    font-weight: 600;
+}
+.btn:hover {
+    background-color: #89c2d9;
+}
+
+/* ---------------- FEATURES ---------------- */
+.features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 70px 20px;
+}
+
+.card {
+    width: 280px;
+    padding: 25px;
+    background: rgba(255,255,255,0.55);
+    border-radius: 20px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: 0.4s;
+}
+.card:hover {
+    transform: translateY(-10px);
+}
+.card h2 {
+    color: #3e6b89;
+}
+
+/* ---------------- WHY CHOOSE US ---------------- */
+.choose {
+    padding: 60px;
+    text-align: center;
+}
+.choose h1 {
+    color: #3e6b89;
+    font-size: 40px;
+}
+.choose-grid {
+    margin-top: 40px;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.choose-box {
+    width: 300px;
+    padding: 25px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 20px;
+    backdrop-filter: blur(6px);
+}
+
+/* ---------------- FOOTER ---------------- */
+footer {
+    margin-top: 80px;
+    background: rgba(0,0,0,0.05);
+    text-align: center;
+    padding: 25px;
+    color: #444;
+    font-size: 15px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="background"></div>
+
+<!-- Floating glow particles -->
+<div class="particle p1"></div>
+<div class="particle p2"></div>
+<div class="particle p3"></div>
+<div class="particle p4"></div>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">TravelSphere ✈️</div>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Blog Page</a></li>
+        <li><a href="#">Tips</a></li>
+        <li><a href="#">National Trips</a></li>
+        <li><a href="#">International Trips</a></li>
+    </ul>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <h1>Welcome to TravelSphere</h1>
+    <p>Your trusted partner for budget-friendly national & international tours curated just for you.</p>
+    <a href="#" class="btn">Explore Packages</a>
+    <br>
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" class="hero-img">
+</section>
+
+<!-- CARDS -->
+<section class="features">
+    <div class="card">
+        <h2>National Trips</h2>
+        <p>Explore India’s beauty with curated domestic tours.</p>
+    </div>
+    <div class="card">
+        <h2>International Trips</h2>
+        <p>Fly across the world with budget-friendly packages.</p>
+    </div>
+    <div class="card">
+        <h2>Travel Tips</h2>
+        <p>Smart tricks to save money & travel like a pro.</p>
+    </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="choose">
+    <h1>Why Choose TravelSphere?</h1>
+    <div class="choose-grid">
+        <div class="choose-box">
+            <h3>💸 Best Pricing</h3>
+            <p>We provide the cheapest and premium-quality packages.</p>
+        </div>
+        <div class="choose-box">
+            <h3>🧳 Personalized Trips</h3>
+            <p>Fully customized itineraries based on your needs.</p>
+        </div>
+        <div class="choose-box">
+            <h3>⭐ Trusted by Many</h3>
+            <p>Thousands of happy travelers trust our services.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    © 2025 TravelSphere — Travel Smarter, Spend Less.
+</footer>
+
+</body>
+</html>

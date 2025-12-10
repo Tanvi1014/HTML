@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TravelSphere - National Trips</title>
+<style>
+/* Reset */
+* {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif;}
+body {background:#f4f0fa; color:#333; line-height:1.5;}
+
+/* NAVBAR */
+nav {
+  position: fixed; width:100%; top:0;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(8px);
+  padding:15px 30px; display:flex;
+  justify-content:space-between; align-items:center;
+  box-shadow:0 2px 6px rgba(0,0,0,0.08); z-index:1000;
+}
+nav h2 {color:#7757d6; font-size:24px; font-weight:700;}
+nav ul {display:flex; list-style:none; gap:20px;}
+nav ul li a {text-decoration:none; color:#444; font-size:15px; transition:0.3s;}
+nav ul li a:hover {color:#7757d6;}
+
+/* HERO */
+.hero {
+  margin-top:70px;
+  padding:80px 20px 30px 20px;
+  text-align:center;
+  background: linear-gradient(135deg, #e8dbff, #f6eafc, #dcd5ff);
+  border-radius:15px;
+}
+.hero h1 {font-size:36px; color:#4b3fa3; margin-bottom:10px;}
+.hero p {font-size:18px; color:#555; margin-bottom:15px;}
+.hero button {
+  padding:10px 25px; background: #8f80e8; color:white;
+  border:none; border-radius:8px; cursor:pointer; transition:0.3s;
+}
+.hero button:hover {transform:scale(1.03);}
+
+/* CATEGORIES */
+.categories {
+  display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin:20px 0;
+}
+.categories button {
+  padding:6px 15px; border:none; background:#b9aaff; color:#4b3fa3;
+  border-radius:15px; cursor:pointer; transition:0.3s;
+}
+.categories button:hover {background:#8f80e8; color:white;}
+
+/* FEATURED DESTINATIONS SLIDER */
+.slider {margin:30px auto; width:90%; overflow:hidden; border-radius:12px;}
+.slides {display:flex; width:500%; animation: slide 20s infinite;}
+.slides img {width:20%; object-fit:cover; border-radius:12px; height:150px;}
+@keyframes slide {
+  0%{transform:translateX(0%);}20%{transform:translateX(0%);}
+  25%{transform:translateX(-20%);}45%{transform:translateX(-20%);}
+  50%{transform:translateX(-40%);}70%{transform:translateX(-40%);}
+  75%{transform:translateX(-60%);}95%{transform:translateX(-60%);}
+  100%{transform:translateX(0);}
+}
+
+/* DESTINATIONS GRID */
+.destinations {
+  width:90%; margin:30px auto; display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap:20px;
+}
+.dest-card {
+  background:white; border-radius:12px;
+  box-shadow:0 3px 10px rgba(0,0,0,0.08); overflow:hidden;
+  transition:0.3s;
+}
+.dest-card:hover {transform:scale(1.03);}
+.dest-card img {width:100%; height:150px; object-fit:cover;}
+.dest-card h3 {color:#7757d6; margin:10px 15px 5px 15px;}
+.dest-card p {margin:0 15px 10px 15px; font-size:14px; color:#555;}
+.dest-card span {display:block; margin:0 15px 10px 15px; font-size:13px; color:#888;}
+
+/* MAP SECTION */
+.map-section {width:90%; margin:40px auto; padding:20px; background:#e8dbff; border-radius:12px; text-align:center;}
+.map-section img {width:100%; max-width:500px; border-radius:12px;}
+
+/* TRAVEL TIPS */
+.tips-section {
+  width:90%; margin:30px auto; padding:20px;
+  background:#dcd4ff; border-radius:12px;
+}
+.tips-section h3 {color:#7757d6; margin-bottom:10px;}
+.tips-section ul li {margin:5px 0; font-size:14px;}
+
+/* TESTIMONIALS */
+.testimonials {width:90%; margin:30px auto; display:flex; flex-wrap:wrap; gap:15px;}
+.testimonial-card {
+  flex:1; min-width:250px; background:#f1eaff; border-radius:12px; padding:15px;
+  box-shadow:0 3px 8px rgba(0,0,0,0.08);
+}
+.testimonial-card p {font-size:14px; color:#555; margin-bottom:10px;}
+.testimonial-card span {font-weight:600; color:#7757d6;}
+
+/* NEWSLETTER */
+.newsletter {width:90%; margin:30px auto; padding:20px; background:#e8dbff; border-radius:12px; text-align:center;}
+.newsletter input[type="email"] {padding:10px; width:50%; border-radius:8px 0 0 8px; border:1px solid #ccc;}
+.newsletter button {padding:10px 15px; border:none; background:#7757d6; color:white; border-radius:0 8px 8px 0; cursor:pointer;}
+.newsletter button:hover {background:#5e42b5;}
+
+/* FOOTER */
+footer {background:#dcd4ff; padding:30px; text-align:center; margin-top:30px; font-size:14px; color:#4b3fa3; border-radius:12px;}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+<h2>TravelSphere</h2>
+<ul>
+<li><a href="Travel.html">Home</a></li>
+<li><a href="nationalpage.html">National Trips</a></li>
+<li><a href="international.html">International Trips</a></li>
+<li><a href="blogpageweb.html">Blog Page</a></li>
+<li><a href="tips.html">Travel Tips</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+<h1>Explore India’s Best Destinations</h1>
+<p>Plan unforgettable trips across India at the most affordable rates.</p>
+<button>Plan Your Trip</button>
+</div>
+
+<!-- CATEGORIES -->
+<div class="categories">
+<button>Beaches</button>
+<button>Hill Stations</button>
+<button>Historical Sites</button>
+<button>Adventure</button>
+<button>Wildlife</button>
+<button>Cultural Tours</button>
+</div>
+
+<!-- FEATURED DESTINATIONS SLIDER -->
+<div class="slider">
+<div class="slides">
+<img src="https://images.unsplash.com/photo-1577683002676-27f5d97c3f64?auto=format&fit=crop&w=600&q=60" alt="Jaipur">
+<img src="https://images.unsplash.com/photo-1561047029-3000a4f9ff19?auto=format&fit=crop&w=600&q=60" alt="Manali">
+<img src="https://images.unsplash.com/photo-1561292427-9b3d2ffbe2c5?auto=format&fit=crop&w=600&q=60" alt="Kerala">
+<img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=600&q=60" alt="Varanasi">
+<img src="https://images.unsplash.com/photo-1502716119727-7bc8d17ff849?auto=format&fit=crop&w=600&q=60" alt="Rishikesh">
+</div>
+</div>
+
+<!-- DESTINATIONS GRID -->
+<div class="destinations">
+<div class="dest-card">
+<img src="https://images.unsplash.com/photo-1577683002676-27f5d97c3f64?auto=format&fit=crop&w=800&q=60" alt="Jaipur">
+<h3>Jaipur</h3>
+<p>The Pink City famous for palaces, forts, and royal history.</p>
+<span>Best Time: Oct-Feb | Budget: ₹10k-15k</span>
+</div>
+
+<div class="dest-card">
+<img src="https://images.unsplash.com/photo-1561047029-3000a4f9ff19?auto=format&fit=crop&w=800&q=60" alt="Manali">
+<h3>Manali</h3>
+<p>Snow-capped mountains, adventure sports and beautiful landscapes.</p>
+<span>Best Time: Oct-Mar | Budget: ₹8k-12k</span>
+</div>
+
+<div class="dest-card">
+<img src="https://images.unsplash.com/photo-1561292427-9b3d2ffbe2c5?auto=format&fit=crop&w=800&q=60" alt="Kerala">
+<h3>Kerala</h3>
+<p>Backwaters, beaches and serene landscapes with cultural richness.</p>
+<span>Best Time: Nov-Feb | Budget: ₹12k-18k</span>
+</div>
+
+<div class="dest-card">
+<img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=60" alt="Varanasi">
+<h3>Varanasi</h3>
+<p>Spiritual city along the Ganges with rich culture and temples.</p>
+<span>Best Time: Oct-Mar | Budget: ₹5k-10k</span>
+</div>
+
+<div class="dest-card">
+<img src="https://images.unsplash.com/photo-1502716119727-7bc8d17ff849?auto=format&fit=crop&w=800&q=60" alt="Rishikesh">
+<h3>Rishikesh</h3>
+<p>Adventure, yoga retreats, and river rafting in the Himalayas.</p>
+<span>Best Time: Sep-Mar | Budget: ₹6k-12k</span>
+</div>
+</div>
+
+<!-- MAP SECTION -->
+<div class="map-section">
+<h2>Click on a Pin to Explore Destinations</h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/38/India_map_blank.png" alt="India Map">
+</div>
+
+<!-- TRAVEL TIPS -->
+<div class="tips-section">
+<h3>Travel Tips for National Trips</h3>
+<ul>
+<li>Book early to get the best rates on transport and hotels.</li>
+<li>Check weather and pack accordingly.</li>
+<li>Respect local culture and customs.</li>
+<li>Carry light cash and travel-friendly cards.</li>
+<li>Use public transport or local taxis to save money.</li>
+</ul>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="testimonials">
+<div class="testimonial-card">
+<p>"Amazing experience! Jaipur and Kerala trips were unforgettable."</p>
+<span>- Tanvi</span>
+</div>
+<div class="testimonial-card">
+<p>"Loved the adventure in Manali! Affordable and fun."</p>
+<span>- Divyansh Garg</span>
+</div>
+<div class="testimonial-card">
+<p>"Rishikesh river rafting was thrilling. Highly recommended!"</p>
+<span>- Anupma</span>
+</div>
+</div>
+
+<!-- NEWSLETTER -->
+<div class="newsletter">
+<h3>Get Best Trip Deals Weekly!</h3>
+<input type="email" placeholder="Enter your email">
+<button>Subscribe</button>
+</div>
+
+<!-- FOOTER -->
+<footer>
+<p>© 2025 TravelSphere | Travel Smart. Travel Affordable.</p>
+</footer>
+
+</body>
+</html>

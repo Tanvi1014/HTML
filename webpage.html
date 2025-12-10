@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Grid Layout Example</title>
+
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* Custom Color Theme */
+    header {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+    }
+
+    nav.navbar {
+      background-color: #1b1b2f !important;
+    }
+
+    .navbar-brand, .nav-link {
+      color: #ffffff !important;
+    }
+
+    .nav-link:hover {
+      color: #a6d1ff !important;
+    }
+
+    .main-box {
+      background: #f2f7ff;
+      border: 2px solid #bfd7ff;
+      border-radius: 12px;
+    }
+
+    .sidebar-box {
+      background: #cfd9ff;
+      border: 2px solid #9bb2ff;
+      border-radius: 12px;
+      color: #1b1b2f;
+    }
+
+    .card {
+      border-radius: 15px;
+      overflow: hidden;
+      border: 1px solid #c7d3ff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    footer {
+      background-color: #1b1b2f !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="text-white text-center py-4 mb-4">
+    <h1>My Bootstrap Webpage</h1>
+    <p class="lead">Responsive layout using Bootstrap Grid & Utility Classes</p>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark mb-4">
+    <div class="container">
+      <a class="navbar-brand" href="#">Brand</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content using Bootstrap Grid -->
+  <main class="container">
+    <div class="row mb-4">
+      <div class="col-md-8">
+        <div class="p-4 main-box">
+          <h2>Main Content</h2>
+          <p>This is the updated content area with a new color theme and format.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-4 sidebar-box">
+          <h2>Sidebar</h2>
+          <p>This sidebar now uses a soft gradient and improved layout.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cards Section -->
+    <div class="row g-4">
+      <div class="col-sm-6 col-lg-3">
+        <div class="card h-100">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Sunrise_over_mountains.jpg" class="card-img-top" alt="Sunrise">
+          <div class="card-body">
+            <h5 class="card-title">Card 1</h5>
+            <p class="card-text">Fresh color theme with modern card styling.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="card h-100">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Smartwatch_icon.svg" class="card-img-top" alt="Smartwatch">
+          <div class="card-body">
+            <h5 class="card-title">Card 2</h5>
+            <p class="card-text">Cards adapt beautifully to all screen sizes.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="card h-100">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Headphones_icon.svg" class="card-img-top" alt="Headphones">
+          <div class="card-body">
+            <h5 class="card-title">Card 3</h5>
+            <p class="card-text">Soft shadows and rounded corners added.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="card h-100">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Coffee_cup_icon.svg" class="card-img-top" alt="Coffee">
+          <div class="card-body">
+            <h5 class="card-title">Card 4</h5>
+            <p class="card-text">Bootstrap grid ensures consistency everywhere.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-white text-center py-4 mt-4">
+    <p>© 2025 Tanvi | Bootstrap Grid Layout Example</p>
+  </footer>
+
+  <!-- Bootstrap JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
